@@ -7,7 +7,7 @@ import './dashboard.css'
 const Dashboard = () => {
   const [message, setMessage] = useState('');
   const dispatch = useDispatch();
-  const tickets = useSelector((state) => state.tickets);
+  const { items: tickets, loading, error} = useSelector((state) => state.tickets);
 
   const handleSubmit = () => {
     if (!message.trim()) return;

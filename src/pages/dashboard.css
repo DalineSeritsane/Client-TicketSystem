@@ -167,6 +167,9 @@ body {
 
   .ticket-form button {
     width: 100%;
+    padding: 12px;
+    font-size: 1rem;
     justify-content: center;
   }
+  
 }

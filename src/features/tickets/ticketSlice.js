@@ -3,10 +3,14 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 //Async thunk to submit ticket to backend 
-export const submitTicket = createAsyncThunk('tickets/submit', async (message, {rejectWithValue}) => {
+const submitTicket = createAsyncThunk('tickets/submit', async (message, {rejectWithValue}) => {
   try{
+    const token = localStorage.getItem('auth-token')
+    if (!token) throw new Error("No auth token found")
+
+
   const res = await axios.post('http://localhost:5000/api/tickets', { message }, {
-    headers: { Authorization: `Bearer ${localStorage.getItem('token')}`,
+    headers: { Authorization: `Bearer ${token}`,
   'Content-Type': 'application/json',
   }
   });
@@ -42,3 +46,4 @@ const ticketSlice = createSlice({
   },
 });
 export default ticketSlice.reducer;
+export { submitTicket}
