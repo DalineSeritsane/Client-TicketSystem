@@ -16,12 +16,12 @@ const Navbar = () => {
     <nav className="bg-white shadow-md text-primary sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          {/* Logo */}
+       
           <Link to="/" className="text-2xl font-extrabold text-accent">
-            Future
+            TICKET SYSTEM
           </Link>
 
-          {/* Desktop Nav */}
+         
           <div className="hidden md:flex space-x-6 items-center">
             {navLinks.map(link => (
               <NavLink
@@ -38,7 +38,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Mobile Button */}
+        
           <div className="md:hidden">
             <button onClick={() => setOpen(!open)}>
               {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -47,7 +47,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Nav */}
       {open && (
         <div className="md:hidden px-4 pb-4 bg-white shadow-sm border-t">
           <ul className="space-y-3">

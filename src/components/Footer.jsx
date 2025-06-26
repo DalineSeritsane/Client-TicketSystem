@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-[black] text-[#555] pt-12 pb-6 px-6 md:px-20">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-        {/* Brand Info */}
+       
         <div>
           <h3 className="text-2xl font-bold text-accent mb-3">HelpDesk Pro</h3>
           <p className="text-sm text-blue-100 leading-relaxed">
@@ -14,7 +14,7 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Quick Links */}
+      
         <div>
           <h4 className="text-xl font-semibold mb-2">Quick Links</h4>
           <ul className="space-y-2 text-sm text-blue-100">
@@ -25,7 +25,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Contact */}
+      
         <div>
           <h4 className="text-xl font-semibold mb-2">Contact Us</h4>
           <ul className="text-sm text-blue-100 space-y-1">
@@ -34,7 +34,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Social Links */}
+      
         <div>
           <h4 className="text-xl font-semibold mb-2">Follow Us</h4>
           <div className="flex space-x-4">
