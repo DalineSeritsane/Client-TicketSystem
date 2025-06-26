@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import '../CSS/navbar.css';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -13,8 +14,8 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white shadow-md text-primary sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="navbar">
+      <div className="navbar-container">
         <div className="flex justify-between h-16 items-center">
        
           <Link to="/" className="text-2xl font-extrabold text-accent">
@@ -22,15 +23,15 @@ const Navbar = () => {
           </Link>
 
          
-          <div className="hidden md:flex space-x-6 items-center">
+          <div className="nav-links-desktop">
             {navLinks.map(link => (
               <NavLink
                 key={link.name}
                 to={link.path}
                 className={({ isActive }) =>
                   isActive
-                    ? 'text-primary font-semibold underline'
-                    : 'text-gray-600 hover:text-primary transition'
+                    ? 'nav-link active'
+                    : 'nav-link'
                 }
               >
                 {link.name}
@@ -39,16 +40,16 @@ const Navbar = () => {
           </div>
 
         
-          <div className="md:hidden">
+          <div className="menu-toggle">
             <button onClick={() => setOpen(!open)}>
-              {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {open ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
       </div>
 
       {open && (
-        <div className="md:hidden px-4 pb-4 bg-white shadow-sm border-t">
+        <div className="nav-links-mobile">
           <ul className="space-y-3">
             {navLinks.map(link => (
               <li key={link.name}>
@@ -57,8 +58,8 @@ const Navbar = () => {
                   onClick={() => setOpen(false)}
                   className={({ isActive }) =>
                     isActive
-                      ? 'block text-primary font-semibold'
-                      : 'block text-gray-600 hover:text-primary'
+                      ? 'nav-link-mobile active'
+                      : 'nav-link-mobile'
                   }
                 >
                   {link.name}
